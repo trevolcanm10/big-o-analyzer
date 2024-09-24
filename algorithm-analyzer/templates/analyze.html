@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Analizar Algoritmo{% endblock %}
+
+{% block content %}
+<h2>Ingresar Algoritmo</h2>
+<form action="{{ url_for('analyze') }}" method="POST">
+    <label for="algorithm_code">Código del Algoritmo:</label>
+    <textarea id="algorithm_code" name="algorithm_code" rows="10" required></textarea>
+
+    <button type="submit">Analizar</button>
+</form>
+{% endblock %}

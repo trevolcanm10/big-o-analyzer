@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Comparar Algoritmos{% endblock %}
+
+{% block content %}
+<h2>Comparación de Algoritmos</h2>
+<form action="{{ url_for('compare') }}" method="POST">
+    <label for="algorithm1">Código del Algoritmo 1:</label>
+    <textarea id="algorithm1" name="algorithm1" rows="5" required></textarea>
+
+    <label for="algorithm2">Código del Algoritmo 2:</label>
+    <textarea id="algorithm2" name="algorithm2" rows="5" required></textarea>
+
+    <button type="submit">Comparar</button>
+</form>
+
+{% if comparison %}
+    <h3>Resultado de la Comparación</h3>
+    <p>{{ comparison }}</p>
+{% endif %}
+{% endblock %}
